@@ -66,7 +66,7 @@ async function handleFile(event) {
 
 // Function to fetch active Canvas courses from the local server
 async function getActiveCanvasCourses() {
-    const response = await fetch('http://localhost:3000/api/courses');
+    const response = await fetch('https://tai-bkt/github.io/TestRepository/index2');
     const courses = await response.json();
 
     return courses.map(course => {
