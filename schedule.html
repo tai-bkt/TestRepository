@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Script2.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index2.html"><img src="Home Button.png" alt="Home" class="home-btn"></a></li>
+            <li><a href="courses.html">Course List</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li id="loginStatus"><a href="#" onclick="toggleLogin()">Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="scheduleSection">
+        <div id="schedule">
+            <!-- Day labels -->
+            <div></div> <!-- Empty cell for time slot column -->
+            <div class="day-label">Monday</div>
+            <div class="day-label">Tuesday</div>
+            <div class="day-label">Wednesday</div>
+            <div class="day-label">Thursday</div>
+            <div class="day-label">Friday</div>
+
+            <!-- Time labels and time slots -->
+            <div class="time-label">12:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="12"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="12"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="12"></div>
+            <div class="time-slot" data-day="Thursday" data-time="12"></div>
+            <div class="time-slot" data-day="Friday" data-time="12"></div>
+
+            <div class="time-label">1:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="1"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="1"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="1"></div>
+            <div class="time-slot" data-day="Thursday" data-time="1"></div>
+            <div class="time-slot" data-day="Friday" data-time="1"></div>
+
+            <div class="time-label">2:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="2"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="2"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="2"></div>
+            <div class="time-slot" data-day="Thursday" data-time="2"></div>
+            <div class="time-slot" data-day="Friday" data-time="2"></div>
+
+            <div class="time-label">3:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="3"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="3"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="3"></div>
+            <div class="time-slot" data-day="Thursday" data-time="3"></div>
+            <div class="time-slot" data-day="Friday" data-time="3"></div>
+
+            <div class="time-label">4:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="4"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="4"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="4"></div>
+            <div class="time-slot" data-day="Thursday" data-time="4"></div>
+            <div class="time-slot" data-day="Friday" data-time="4"></div>
+
+            <div class="time-label">5:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="5"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="5"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="5"></div>
+            <div class="time-slot" data-day="Thursday" data-time="5"></div>
+            <div class="time-slot" data-day="Friday" data-time="5"></div>
+
+            <div class="time-label">6:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="6"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="6"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="6"></div>
+            <div class="time-slot" data-day="Thursday" data-time="6"></div>
+            <div class="time-slot" data-day="Friday" data-time="6"></div>
+
+            <div class="time-label">7:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="7"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="7"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="7"></div>
+            <div class="time-slot" data-day="Thursday" data-time="7"></div>
+            <div class="time-slot" data-day="Friday" data-time="7"></div>
+
+            <div class="time-label">8:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="8"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="8"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="8"></div>
+            <div class="time-slot" data-day="Thursday" data-time="8"></div>
+            <div class="time-slot" data-day="Friday" data-time="8"></div>
+
+            <div class="time-label">9:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="9"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="9"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="9"></div>
+            <div class="time-slot" data-day="Thursday" data-time="9"></div>
+            <div class="time-slot" data-day="Friday" data-time="9"></div>
+
+            <div class="time-label">10:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="10"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="10"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="10"></div>
+            <div class="time-slot" data-day="Thursday" data-time="10"></div>
+            <div class="time-slot" data-day="Friday" data-time="10"></div>
+
+            <div class="time-label">11:00 AM</div>
+            <div class="time-slot" data-day="Monday" data-time="11"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="11"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="11"></div>
+            <div class="time-slot" data-day="Thursday" data-time="11"></div>
+            <div class="time-slot" data-day="Friday" data-time="11"></div>
+
+            <div class="time-label">12:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="12"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="12"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="12"></div>
+            <div class="time-slot" data-day="Thursday" data-time="12"></div>
+            <div class="time-slot" data-day="Friday" data-time="12"></div>
+
+            <div class="time-label">1:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="1"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="1"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="1"></div>
+            <div class="time-slot" data-day="Thursday" data-time="1"></div>
+            <div class="time-slot" data-day="Friday" data-time="1"></div>
+
+            <div class="time-label">2:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="2"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="2"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="2"></div>
+            <div class="time-slot" data-day="Thursday" data-time="2"></div>
+            <div class="time-slot" data-day="Friday" data-time="2"></div>
+
+            <div class="time-label">3:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="3"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="3"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="3"></div>
+            <div class="time-slot" data-day="Thursday" data-time="3"></div>
+            <div class="time-slot" data-day="Friday" data-time="3"></div>
+
+            <div class="time-label">4:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="4"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="4"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="4"></div>
+            <div class="time-slot" data-day="Thursday" data-time="4"></div>
+            <div class="time-slot" data-day="Friday" data-time="4"></div>
+
+            <div class="time-label">5:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="5"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="5"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="5"></div>
+            <div class="time-slot" data-day="Thursday" data-time="5"></div>
+            <div class="time-slot" data-day="Friday" data-time="5"></div>
+
+            <div class="time-label">6:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="6"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="6"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="6"></div>
+            <div class="time-slot" data-day="Thursday" data-time="6"></div>
+            <div class="time-slot" data-day="Friday" data-time="6"></div>
+
+            <div class="time-label">7:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="7"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="7"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="7"></div>
+            <div class="time-slot" data-day="Thursday" data-time="7"></div>
+            <div class="time-slot" data-day="Friday" data-time="7"></div>
+
+            <div class="time-label">8:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="8"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="8"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="8"></div>
+            <div class="time-slot" data-day="Thursday" data-time="8"></div>
+            <div class="time-slot" data-day="Friday" data-time="8"></div>
+
+            <div class="time-label">9:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="8"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="8"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="8"></div>
+            <div class="time-slot" data-day="Thursday" data-time="8"></div>
+            <div class="time-slot" data-day="Friday" data-time="8"></div>
+
+            <div class="time-label">10:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="10"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="10"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="10"></div>
+            <div class="time-slot" data-day="Thursday" data-time="10"></div>
+            <div class="time-slot" data-day="Friday" data-time="10"></div>
+
+            <div class="time-label">11:00 PM</div>
+            <div class="time-slot" data-day="Monday" data-time="10"></div>
+            <div class="time-slot" data-day="Tuesday" data-time="10"></div>
+            <div class="time-slot" data-day="Wednesday" data-time="10"></div>
+            <div class="time-slot" data-day="Thursday" data-time="10"></div>
+            <div class="time-slot" data-day="Friday" data-time="10"></div>
+        </div>
+    </section>
+</body>
+</html>
+
+

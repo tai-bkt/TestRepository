@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Courses</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index2.html"><img src="Home Button.png" alt="Home" class="home-btn"></a></li>
+            <li><a href="courses.html">Course List</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li id="loginStatus"><a href="#" onclick="toggleLogin()">Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="coursesSection">
+        <div id="scheduleWrapper">
+            <h2>Your Schedule</h2>
+            <ul id="scheduleList">
+                <!-- Schedule will be rendered here by JavaScript -->
+            </ul>
+        </div>
+
+        <div id="availableClassesWrapper">
+            <h2>Available Classes</h2>
+            <div id="availableClassesList">
+                <!-- Available classes will be rendered here by JavaScript -->
+                <div class="class-card" data-class="Class 1">
+                    <h3>Class 1</h3>
+                    <p>Time: Mon 10 AM</p>
+                    <p>Location: Building A</p>
+                    <button onclick="addToSchedule(this)">Add to Schedule</button>
+                </div>
+                <div class="class-card" data-class="Class 2">
+                    <h3>Class 2</h3>
+                    <p>Time: Wed 2 PM</p>
+                    <p>Location: Building B</p>
+                    <button onclick="addToSchedule(this)">Add to Schedule</button>
+                </div>
+                <!-- Add more classes as needed -->
+            </div>
+        </div>
+    </section>
+
+    <script src="Script2.js"></script>
+</body>
+</html>
+
+

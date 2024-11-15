@@ -1,0 +1,352 @@
+/* General page styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Modern, clean font */
+    background-color: #f5f6fa; /* Lighter background for a clean look */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Navigation Bar Styling */
+nav ul {
+    display: flex;
+    justify-content: space-evenly; /* Evenly spaced items */
+    list-style-type: none;
+    background-color: #34495e; /* Corporate dark color */
+    padding: 15px 30px;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold; /* Bold text for readability */
+    font-size: 1.1rem; /* Slightly larger font size for easier reading */
+    padding: 10px 20px; /* Added padding for button-like feel */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    color: #fff; /* White text on hover */
+}
+
+/* Button Styling */
+.home-btn {
+    width: 30px; /* Adjust size to fit with the text */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.home-btn:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+
+/* Main Content Area */
+#userSection {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#userSection:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Flex layout for map and schedule */
+#userSection {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#scheduleWrapper, #mapWrapper {
+    flex: 1;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#scheduleWrapper h2, #mapWrapper h2 {
+    color: #34495e;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#scheduleList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#scheduleList li {
+    background-color: #ecf0f1;
+    padding: 15px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Ensure the map has a specific height */
+#mapWrapper {
+    width: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Course Cards */
+#courseList {
+    padding: 30px;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.course-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.course-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.course-card button {
+    padding: 10px 20px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.course-card button:hover {
+    background-color: #1abc9c;
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 768px) {
+    #userSection {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #map {
+        height: 300px;
+    }
+}
+
+/* Flex layout for courses section */
+#coursesSection {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+#scheduleWrapper, #availableClassesWrapper {
+    flex: 1;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-right: 25px;
+}
+
+#availableClassesWrapper {
+    margin-right: 0;
+}
+
+/* Class card styles */
+.class-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.class-card h3 {
+    margin: 0;
+}
+
+.class-card button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.class-card button:hover {
+    background-color: #555;
+}
+
+/* Schedule grid styling */
+#schedule {
+    display: grid;
+    grid-template-columns: 60px repeat(5, 1fr);
+    grid-template-rows: 50px repeat(14, 60px);
+    gap: 1px;
+    background-color: #dcdcdc;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Header row for days of the week */
+.day-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+/* Time column for hourly time slots */
+.time-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    font-weight: bold;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    color: #666;
+}
+
+/* Calendar time slots */
+.time-slot {
+    position: relative;
+    background-color: white;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Class block inside a time slot */
+.class-block {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    top: 0;
+    height: 100%;
+    background-color: #1abc9c;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Specific class colors */
+.class-block.blue {
+    background-color: #3498db;
+}
+
+.class-block.red {
+    background-color: #e74c3c;
+}
+
+.class-block.yellow {
+    background-color: #f1c40f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #schedule {
+        grid-template-columns: 50px repeat(5, 1fr);
+        grid-template-rows: 40px repeat(14, 50px);
+    }
+
+    .time-label {
+        font-size: 0.75rem;
+    }
+}
+
+/* Adjust button container to fit inside the scheduleWrapper */
+#courseButtons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: stretch; /* Stretch to fit the available space */
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px;
+    width: 100%; /* Make it span the full width of the scheduleWrapper */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Ensure buttons stretch within their container */
+#courseButtons button {
+    padding: 12px 20px; /* Adequate padding */
+    background-color: #34495e; /* Corporate dark color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; /* Easy to read size */
+    margin-bottom: 10px; /* Space between buttons */
+    width: 100%; /* Ensure buttons span the full width */
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #userSection {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        gap: 15px;
+    }
+
+    #scheduleWrapper {
+        flex: 1 1 100%; /* Allow scheduleWrapper to take full width on small screens */
+    }
+
+    #courseButtons {
+        width: 100%; /* Full width on small screens */
+        padding: 15px;
+    }
+
+    #courseButtons button {
+        font-size: 0.9rem; /* Slightly smaller text on smaller screens */
+    }
+}

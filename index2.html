@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Plotter with Google Maps</title>
+    <link rel="stylesheet" href="style2.css"> <!-- Style from the other index -->
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index2.html"><img src="Home Button.png" alt="Home" class="home-btn"></a></li>
+            <li><a href="courses.html">Course List</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li id="loginStatus"><a href="#" onclick="toggleLogin()">Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="userSection">
+        <div id="scheduleWrapper">
+            <h2>Your Schedule</h2>
+            <input type="file" id="excelFileInput" accept=".xlsx, .xls" />
+            <div id="courseButtons"></div>
+            <!-- File input for uploading Excel schedule -->
+        </div>
+
+        <div id="mapWrapper">
+            <h2>Your Classes on the Map</h2>
+            <div id="map" style="height: 600px; width: 100%;"></div> <!-- Map container -->
+            
+            <!-- Course Buttons Container (buttons will be dynamically added here) -->
+            
+        </div>
+    </section>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK0ic4TKDKcSpo06037WR4YZam42wMrik&libraries=places&callback=initMap" async defer></script>
+    <!-- SheetJS for reading Excel files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="Script2.js"></script>
+</body>
+</html>

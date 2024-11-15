@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Class Map with Directions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body, html { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
+      #courseButtons {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        max-height: 90%;
+        overflow-y: auto;
+      }
+      button {
+        margin: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="courseButtons"></div>
+    <input type="file" id="excelFileInput" />
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK0ic4TKDKcSpo06037WR4YZam42wMrik&libraries=places"></script>
+    <script>
+      // Initialize the Google Map
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 39.507, lng: -84.745 }, // Dayton, OH
+        zoom: 13
+      });
+
+      const directionsService = new google.maps.DirectionsService();
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      directionsRenderer.setMap(map);
+
+      document.getElementById('excelFileInput').addEventListener('change', handleFile);
+
+      async function handleFile(event) {
+        const file = event.target.files[0];
+        if (!file) {
+          console.error('No file selected');
+          return;
+        }
+
+        // Read and process the file as before, then for each course that matches:
+        const courses = await getActiveCanvasCourses();
+        const buttonContainer = document.getElementById('courseButtons');
+        buttonContainer.innerHTML = '';
+
+        excelData.slice(1).forEach(row => {
+          const [courseSubjectCode, courseNumber, courseBuilding, room] = row;
+          const sectionIDs = expandSectionRange(courseSection);
+          
+          if (isCourseActive(courses, courseSubjectCode, courseNumber, sectionIDs)) {
+            const button = document.createElement('button');
+            button.innerText = `${courseSubjectCode} ${courseNumber}`;
+            button.onclick = () => plotCourseOnMap(courseBuilding, room);
+            buttonContainer.appendChild(button);
+          }
+        });
+      }
+
+      async function plotCourseOnMap(building, room) {
+        const geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: building + " Dayton" }, function(results, status) {
+          if (status === "OK") {
+            const location = results[0].geometry.location;
+
+            new google.maps.Marker({
+              position: location,
+              map: map,
+              title: `${building} Room: ${room}`
+            });
+
+            getDirectionsTo(location);
+          } else {
+            console.error("Geocode was not successful for the following reason: " + status);
+          }
+        });
+      }
+
+      function getDirectionsTo(destination) {
+        const origin = { lat: 39.507, lng: -84.745 }; // Replace with user’s current location if needed
+        const request = {
+          origin: origin,
+          destination: destination,
+          travelMode: 'DRIVING'
+        };
+
+        directionsService.route(request, function(result, status) {
+          if (status == 'OK') {
+            directionsRenderer.setDirections(result);
+          } else {
+            console.error('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+      // Other helper functions remain the same
+    </script>
+  </body>
+</html>
